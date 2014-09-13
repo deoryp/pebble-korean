@@ -1,0 +1,129 @@
+{
+  "uuid": "3cf2450e-5f6f-4f22-baaa-8c2a968cfc28",
+  "shortName": "Image Demo",
+  "longName": "Image Demo",
+  "companyName": "Pebble Technology",
+  "versionCode": 2,
+  "versionLabel": "2.0.0",
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {},
+  "resources": {
+    "media": [
+      {
+        "type": "png",
+        "name": "IMAGE_HOUR",
+        "file": "images/hour.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_MINUTE",
+        "file": "images/minute.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_SECOND",
+        "file": "images/second.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_AM",
+        "file": "images/am.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_PM",
+        "file": "images/pm.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_KR_ONE",
+        "file": "images/kr_one.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_KR_TWO",
+        "file": "images/kr_two.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_KR_THREE",
+        "file": "images/kr_three.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_KR_FOUR",
+        "file": "images/kr_four.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_KR_FIVE",
+        "file": "images/kr_five.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_KR_SIX",
+        "file": "images/kr_six.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_KR_SEVEN",
+        "file": "images/kr_seven.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_KR_EIGHT",
+        "file": "images/kr_eight.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_KR_NINE",
+        "file": "images/kr_nine.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_KR_TEN",
+        "file": "images/kr_ten.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_KR_ELEVEN",
+        "file": "images/kr_eleven.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_KR_TWELVE",
+        "file": "images/kr_twelve.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_SINO_ZERO",
+        "file": "images/sino_zero.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_SINO_ONE",
+        "file": "images/sino_one.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_SINO_TWO",
+        "file": "images/sino_two.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_SINO_THREE",
+        "file": "images/sino_three.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_SINO_FOUR",
+        "file": "images/sino_four.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_SINO_FIVE",
+        "file": "images/sino_five.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_SINO_SIX",
+        "file": "images/sino_six.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_SINO_SEVEN",
+        "file": "images/sino_seven.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_SINO_EIGHT",
+        "file": "images/sino_eight.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_SINO_NINE",
+        "file": "images/sino_nine.png"
+      },{
+        "type": "png",
+        "name": "IMAGE_SINO_TEN",
+        "file": "images/sino_ten.png"
+      }
+    ]
+  }
+}
