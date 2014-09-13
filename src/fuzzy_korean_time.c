@@ -17,8 +17,6 @@ static int hour = 1;
 static int minute = 1;
 static int second = 1;
 
-static int height = 40;
-
 #define PERIOD_HEIGHT  (1)
 #define HOURS_HEIGHT   (40+1)
 #define MINUTES_HEIGHT (40*2+1)
@@ -44,35 +42,35 @@ static void layer_hour_update_callback(Layer *me, GContext* ctx) {
   
 }
 
-static void layer_minute_update_callback(Layer *me, GContext* ctx) {
-  if (minute > 9) {
-    int tens = (minute - (minute % 10)) / 10;
-    if (tens > 1) {
-      draw_image_at(me, ctx, image_sino[tens], COL_0, MINUTES_HEIGHT);
+static void draw_sino_number(Layer *me, GContext* ctx, int number, int counter, int height) {
+  if (number < 10) {
+    draw_image_at(me, ctx, image_sino[number], COL_2, height);
+  } else if (number >= 10) {
+    int ones = number % 10;
+    int tens = (number - ones) / 10; 
+    if (ones == 0) {
+      if (tens > 1) {
+        draw_image_at(me, ctx, image_sino[tens], COL_1, height);
+      }
+      draw_image_at(me, ctx, image_sino[10], COL_2, height);
+    } else {
+      if (tens > 1) {
+        draw_image_at(me, ctx, image_sino[tens], COL_0, height);
+      }
+      draw_image_at(me, ctx, image_sino[10], COL_1, height);
+      draw_image_at(me, ctx, image_sino[ones], COL_2, height);
     }
-    draw_image_at(me, ctx, image_sino[10], COL_1, MINUTES_HEIGHT);
   }
-  
-  int ones = minute % 10;
-  draw_image_at(me, ctx, image_sino[ones], COL_2, MINUTES_HEIGHT);
-  
-  draw_image_at(me, ctx, image_counter[1], COL_3, MINUTES_HEIGHT);
-  
+  draw_image_at(me, ctx, image_counter[counter], COL_3, height);
+}
+
+
+static void layer_minute_update_callback(Layer *me, GContext* ctx) {
+  draw_sino_number(me, ctx, minute, 1, MINUTES_HEIGHT);
 }
 
 static void layer_second_update_callback(Layer *me, GContext* ctx) {
-  if (second > 9) {
-    int tens = (second - (second % 10)) / 10;
-    if (tens > 1) {
-      draw_image_at(me, ctx, image_sino[tens], COL_0, SECONDS_HEIGHT);
-    }
-    draw_image_at(me, ctx, image_sino[10], COL_1, SECONDS_HEIGHT);
-  }
-  
-  int ones = second % 10;
-  draw_image_at(me, ctx, image_sino[ones], COL_2, SECONDS_HEIGHT);
-  
-  draw_image_at(me, ctx, image_counter[2], COL_3, SECONDS_HEIGHT);
+  draw_sino_number(me, ctx, second, 2, SECONDS_HEIGHT);
 }
 
 static void handle_second_tick(struct tm* t, TimeUnits units_changed) {
@@ -104,7 +102,7 @@ static void handle_second_tick(struct tm* t, TimeUnits units_changed) {
   }
   
   if(units_changed & MINUTE_UNIT) {
-    minute = t->tm_sec;
+    minute = t->tm_min;
     layer_mark_dirty(layer_minute);
   }
   
