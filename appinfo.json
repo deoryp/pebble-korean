@@ -1,10 +1,10 @@
 {
-  "uuid": "3cf2450e-5f6f-4f22-baaa-8c2a968cfc28",
-  "shortName": "Image Demo",
-  "longName": "Image Demo",
-  "companyName": "Pebble Technology",
-  "versionCode": 2,
-  "versionLabel": "2.0.0",
+  "uuid": "3a5e4ee2-443a-4a4b-9840-d2db029b223d",
+  "shortName": "KrTime",
+  "longName": "Fuzzy Korean Time",
+  "companyName": "deoryp",
+  "versionCode": 1,
+  "versionLabel": "1.0.0",
   "watchapp": {
     "watchface": true
   },
