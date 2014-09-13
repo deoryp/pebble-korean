@@ -21,10 +21,8 @@ static int second = 1;
 #define HOURS_HEIGHT   (40+1)
 #define MINUTES_HEIGHT (40*2+1)
 #define SECONDS_HEIGHT (40*3+1)
-#define COL_0 (0)
-#define COL_1 (36)
-#define COL_2 (72)
-#define COL_3 (108)
+
+static int col[4] = {0, 36, 72, 108};
 
 static void draw_image_at(Layer *me, GContext* ctx, GBitmap * image, int x, int y) {
   GRect bounds = image->bounds;
@@ -33,35 +31,36 @@ static void draw_image_at(Layer *me, GContext* ctx, GBitmap * image, int x, int 
 
 
 static void layer_period_update_callback(Layer *me, GContext* ctx) {
-  draw_image_at(me, ctx, image_period[period], COL_1, PERIOD_HEIGHT);
+  draw_image_at(me, ctx, image_period[period], col[2], PERIOD_HEIGHT);
 }
 
 static void layer_hour_update_callback(Layer *me, GContext* ctx) {
-  draw_image_at(me, ctx, image_kr[hour], COL_0, HOURS_HEIGHT);
-  draw_image_at(me, ctx, image_counter[0], COL_3, HOURS_HEIGHT);
+  draw_image_at(me, ctx, image_kr[hour], col[0], HOURS_HEIGHT);
+  draw_image_at(me, ctx, image_counter[0], col[3], HOURS_HEIGHT);
   
 }
 
 static void draw_sino_number(Layer *me, GContext* ctx, int number, int counter, int height) {
+  int i = 0;
   if (number < 10) {
-    draw_image_at(me, ctx, image_sino[number], COL_2, height);
+    draw_image_at(me, ctx, image_sino[number], col[i++], height);
   } else if (number >= 10) {
     int ones = number % 10;
     int tens = (number - ones) / 10; 
     if (ones == 0) {
       if (tens > 1) {
-        draw_image_at(me, ctx, image_sino[tens], COL_1, height);
+        draw_image_at(me, ctx, image_sino[tens], col[i++], height);
       }
-      draw_image_at(me, ctx, image_sino[10], COL_2, height);
+      draw_image_at(me, ctx, image_sino[10], col[i++], height);
     } else {
       if (tens > 1) {
-        draw_image_at(me, ctx, image_sino[tens], COL_0, height);
+        draw_image_at(me, ctx, image_sino[tens], col[i++], height);
       }
-      draw_image_at(me, ctx, image_sino[10], COL_1, height);
-      draw_image_at(me, ctx, image_sino[ones], COL_2, height);
+      draw_image_at(me, ctx, image_sino[10], col[i++], height);
+      draw_image_at(me, ctx, image_sino[ones], col[i++], height);
     }
   }
-  draw_image_at(me, ctx, image_counter[counter], COL_3, height);
+  draw_image_at(me, ctx, image_counter[counter], col[i++], height);
 }
 
 
