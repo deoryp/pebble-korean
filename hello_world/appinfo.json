@@ -1,0 +1,23 @@
+{
+  "uuid": "c85a295b-20ba-4a80-9c4c-897ee9e2778d",
+  "shortName": "KoreaWatch",
+  "longName": "Korean Fancy Watch",
+  "companyName": "deoryp",
+  "versionCode": 1,
+  "versionLabel": "1.0.0",
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": [
+      {
+        "type": "png",
+        "name": "IMAGE_PUG",
+        "file": "images/pug.png"
+      }
+    ]
+  }
+}
