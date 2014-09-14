@@ -190,7 +190,7 @@ static void do_deinit(void) {
     gbitmap_destroy(image_kr[i]);
   }
   
-  for (int i = 0; i < 12; i++) {
+  for (int i = 0; i < 11; i++) {
     gbitmap_destroy(image_sino[i]);
   }
   
